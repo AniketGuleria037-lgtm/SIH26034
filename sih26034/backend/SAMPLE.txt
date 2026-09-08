@@ -1,0 +1,3 @@
+Backend sample placeholder.
+
+Future content: main API and module integration/orchestration.

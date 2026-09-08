@@ -1,0 +1,3 @@
+Report sample placeholder.
+
+Future content: compliance report and PDF generation.

@@ -1,0 +1,3 @@
+Test-data sample placeholder.
+
+Future content: sample package images, OCR outputs, extracted JSON, expected results, and reports.

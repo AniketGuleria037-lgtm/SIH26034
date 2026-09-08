@@ -1,0 +1,3 @@
+Frontend/UI sample placeholder.
+
+Future content: package image upload screens, compliance result views, and report views.

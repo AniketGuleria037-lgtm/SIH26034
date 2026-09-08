@@ -1,0 +1,3 @@
+OCR sample placeholder.
+
+Future content: OCR and computer-vision processing for package images.

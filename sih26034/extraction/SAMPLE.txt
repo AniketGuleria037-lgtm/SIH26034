@@ -1,0 +1,3 @@
+Extraction sample placeholder.
+
+Future content: extract mrp, net_quantity, manufacturer, packing_date, and consumer_care from OCR output.

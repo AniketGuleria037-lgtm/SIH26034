@@ -1,0 +1,3 @@
+Rules sample placeholder.
+
+Future content: compliance rule checks and PASS/FAIL decisions.
