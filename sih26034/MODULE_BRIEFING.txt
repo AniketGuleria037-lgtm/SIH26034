@@ -1,0 +1,39 @@
+SIH26034 MODULE BRIEFING
+========================
+
+This project is intentionally simple. Place work directly in the relevant
+top-level module folder. Do not add deeper architecture until the team agrees
+it is needed.
+
+frontend/
+Create the user interface for uploading package images and viewing compliance
+results and generated reports.
+
+backend/
+Create the main API that accepts package images and coordinates OCR,
+extraction, rules, and report generation.
+
+ocr/
+Create OCR and computer-vision work that reads text from package images.
+
+extraction/
+Create logic that turns OCR output into these locked declaration fields:
+mrp, net_quantity, manufacturer, packing_date, consumer_care.
+
+rules/
+Create compliance checks that evaluate extracted declaration fields and return
+PASS or FAIL results with reasons.
+
+report/
+Create compliance report and PDF generation from the compliance result.
+
+contracts/
+Create and maintain shared JSON formats exchanged between modules.
+
+test-data/
+Store sample package images, OCR output, extracted JSON, expected compliance
+results, and sample reports for testing.
+
+Basic data flow:
+Package Image -> Backend -> OCR -> Extraction -> Rules -> Compliance Result
+-> Frontend/Report
