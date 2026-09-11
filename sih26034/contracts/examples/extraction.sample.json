@@ -1,0 +1,22 @@
+{
+  "mrp": {
+    "value": "₹50",
+    "box": [120, 300, 250, 340]
+  },
+  "net_quantity": {
+    "value": "200 g",
+    "box": [110, 350, 290, 390]
+  },
+  "manufacturer": {
+    "value": "Acme Foods Pvt. Ltd.",
+    "box": [10, 20, 300, 50]
+  },
+  "packing_date": {
+    "value": "08/2026",
+    "box": [10, 60, 200, 90]
+  },
+  "consumer_care": {
+    "value": "help@acme.test",
+    "box": [10, 100, 300, 130]
+  }
+}

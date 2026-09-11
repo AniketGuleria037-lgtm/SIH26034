@@ -1,0 +1,34 @@
+{
+  "rules": [
+    {
+      "field": "mrp",
+      "required": true,
+      "format_regex": null,
+      "description": "MRP must be present and legible"
+    },
+    {
+      "field": "net_quantity",
+      "required": true,
+      "format_regex": "^\\d+(\\.\\d+)?\\s?(g|kg|ml|l)$",
+      "description": "Net quantity must include a numeric value and unit"
+    },
+    {
+      "field": "manufacturer",
+      "required": true,
+      "format_regex": null,
+      "description": "Manufacturer/packer name must be present"
+    },
+    {
+      "field": "packing_date",
+      "required": true,
+      "format_regex": "^(0[1-9]|1[0-2])/\\d{4}$",
+      "description": "Packing date must be in MM/YYYY format"
+    },
+    {
+      "field": "consumer_care",
+      "required": true,
+      "format_regex": null,
+      "description": "Consumer care contact must be present"
+    }
+  ]
+}

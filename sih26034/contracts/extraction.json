@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SIH26034 Declaration Extraction Output",
+  "description": "The fixed output contract for deterministic declaration extraction.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mrp",
+    "net_quantity",
+    "manufacturer",
+    "packing_date",
+    "consumer_care"
+  ],
+  "properties": {
+    "mrp": { "$ref": "#/$defs/declaration" },
+    "net_quantity": { "$ref": "#/$defs/declaration" },
+    "manufacturer": { "$ref": "#/$defs/declaration" },
+    "packing_date": { "$ref": "#/$defs/declaration" },
+    "consumer_care": { "$ref": "#/$defs/declaration" }
+  },
+  "$defs": {
+    "declaration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "box"],
+      "oneOf": [
+        {
+          "properties": {
+            "value": { "type": "string" },
+            "box": {
+              "type": "array",
+              "items": { "type": "number" },
+              "minItems": 4,
+              "maxItems": 4
+            }
+          }
+        },
+        {
+          "properties": {
+            "value": { "type": "null" },
+            "box": { "type": "null" }
+          }
+        }
+      ]
+    }
+  }
+}
