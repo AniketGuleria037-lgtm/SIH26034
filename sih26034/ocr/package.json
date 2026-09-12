@@ -1,0 +1,16 @@
+{
+  "name": "sih26034-ocr",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OCR and computer vision for SIH26034: reads package images into text blocks with bounding boxes and confidence.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ocr.test.js",
+    "bench": "node benchmark.js",
+    "cli": "node cli.js"
+  },
+  "dependencies": {
+    "sharp": "^0.34.5",
+    "tesseract.js": "^7.0.0"
+  }
+}
