@@ -6,6 +6,18 @@ const { evaluateCompliance } = require("../rules/index.js");
 const { recognizeToBlocks } = require("../ocr/index.js");
 
 const app = express();
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
 const port = process.env.PORT || 5000;
 
 app.get("/health", (req, res) => {
@@ -48,7 +60,7 @@ app.post(
         error: "Analysis could not be completed",
       });
     }
-  }
+  },
 );
 
 app.listen(port, () => {

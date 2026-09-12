@@ -1,0 +1,384 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar {
+  width: 100%;
+  padding: 22px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8e8ee;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: #eef7f1;
+  font-size: 21px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 19px;
+  letter-spacing: -0.4px;
+}
+
+.brand p {
+  margin: 2px 0 0;
+  color: #777985;
+  font-size: 12px;
+}
+
+.badge {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #f1f1f6;
+  color: #686a76;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 70px 20px 40px;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 720px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #6c6f7d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+h2 {
+  margin: 0;
+  color: #1d1e24;
+  font-size: clamp(42px, 7vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -3px;
+}
+
+h2 span {
+  color: #5b8c6a;
+}
+
+.description {
+  max-width: 530px;
+  margin: 22px auto 34px;
+  color: #72747f;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ---------- UPLOAD ---------- */
+
+.upload-card {
+  padding: 42px 30px;
+  border: 2px dashed #d8d9df;
+  border-radius: 24px;
+  background: #ffffff;
+  transition: 0.2s ease;
+}
+
+.upload-card:hover {
+  border-color: #9bbba5;
+  transform: translateY(-2px);
+}
+
+.upload-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #eef7f1;
+  font-size: 25px;
+}
+
+.upload-card h3 {
+  margin: 0;
+  color: #24252b;
+  font-size: 19px;
+}
+
+.upload-card p {
+  margin: 9px 0 20px;
+  color: #858691;
+  font-size: 14px;
+}
+
+.choose-button {
+  padding: 11px 20px;
+  border: 0;
+  border-radius: 11px;
+  background: #f0f1f4;
+  color: #303139;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.choose-button:hover {
+  background: #e6e7eb;
+}
+
+.upload-card small {
+  display: block;
+  margin-top: 14px;
+  color: #a0a1aa;
+  font-size: 11px;
+}
+
+/* ---------- ANALYZE ---------- */
+
+.analyze-button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 15px;
+  border: 0;
+  border-radius: 14px;
+  background: #202329;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.analyze-button:hover {
+  background: #35383f;
+  transform: translateY(-1px);
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  padding: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  color: #a0a1aa;
+  font-size: 11px;
+}
+
+.image-preview {
+  display: block;
+  width: 100%;
+  max-height: 330px;
+  object-fit: contain;
+  border-radius: 16px;
+  margin-bottom: 18px;
+}
+
+.selected-name {
+  color: #5b8c6a !important;
+  font-weight: 600;
+  margin: 0 0 16px !important;
+}
+
+.debug-result {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #202329;
+  color: #d9e8dc;
+  text-align: left;
+  overflow-x: auto;
+  font-size: 12px;
+}
+
+/* ---------- RESULT CARD ---------- */
+
+.result-card {
+  margin-top: 36px;
+  padding: 28px;
+  border: 1px solid #e5e5ea;
+  border-radius: 24px;
+  background: #ffffff;
+  text-align: left;
+  box-shadow: 0 10px 35px rgba(30, 32, 38, 0.06);
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #eeeeF2;
+}
+
+.result-label {
+  color: #8a8c96;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.result-header h2 {
+  margin: 5px 0 0;
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+.status-good {
+  color: #4f8860;
+}
+
+.status-bad {
+  color: #c45c5c;
+}
+
+.status-circle {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.status-circle.good {
+  background: #eaf6ee;
+  color: #4f8860;
+}
+
+.status-circle.bad {
+  background: #fbecec;
+  color: #c45c5c;
+}
+
+/* ---------- FIELD LIST ---------- */
+
+.fields-list {
+  margin-top: 8px;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 4px;
+  border-bottom: 1px solid #f0f0f3;
+}
+
+.field-name {
+  margin: 0;
+  text-transform: capitalize;
+  color: #666873;
+  font-size: 13px;
+}
+
+.field-value {
+  margin: 5px 0 0;
+  color: #202126;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.field-status {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.field-status.pass {
+  background: #edf7f0;
+  color: #4f8860;
+}
+
+.field-status.fail {
+  background: #fceeee;
+  color: #c45c5c;
+}
+
+/* ---------- VIOLATIONS ---------- */
+
+.violations {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #fff7f7;
+}
+
+.violations h3 {
+  margin: 0 0 12px;
+  color: #a95353;
+  font-size: 14px;
+}
+
+.violation {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 9px 0;
+  font-size: 13px;
+}
+
+.violation strong {
+  color: #36373d;
+  text-transform: capitalize;
+}
+
+.violation span {
+  color: #777985;
+}
+
+/* ---------- SUCCESS ---------- */
+
+.all-good {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #f0f8f3;
+  color: #4f8860;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---------- ANOTHER BUTTON ---------- */
+
+.another-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  border: 1px solid #dedfe5;
+  border-radius: 12px;
+  background: white;
+  color: #34353c;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.another-button:hover {
+  background: #f6f6f8;
+}
