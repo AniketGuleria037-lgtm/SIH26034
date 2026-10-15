@@ -1,0 +1,13 @@
+{
+  "name": "sih26034-report",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Compliance report generation for SIH26034: printable HTML and PDF from a screening result.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test report.test.js"
+  },
+  "dependencies": {
+    "pdfkit": "^0.15.1"
+  }
+}

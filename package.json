@@ -1,0 +1,29 @@
+{
+  "name": "sih26034",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Software system to check compliance of packaged commodities under the Legal Metrology (Packaged Commodities) Rules, 2011.",
+  "workspaces": [
+    "backend",
+    "frontend",
+    "ocr",
+    "report"
+  ],
+  "scripts": {
+    "start": "npm start --workspace backend",
+    "dev:backend": "npm run dev --workspace backend",
+    "dev:frontend": "npm run dev --workspace frontend",
+    "build": "npm run build --workspace frontend",
+    "demo": "npm run build && npm start",
+    "test": "npm run test:ocr && npm run test:extraction && npm run test:rules && npm run test:report && npm run test:backend",
+    "test:ocr": "node ocr/ocr.test.js",
+    "test:extraction": "node extraction/extraction.test.js",
+    "test:rules": "node --test rules/",
+    "test:report": "node --test report/",
+    "test:backend": "node --test backend/",
+    "accuracy": "node test-data/accuracy.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

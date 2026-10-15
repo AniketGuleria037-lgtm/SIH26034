@@ -1,0 +1,487 @@
+{
+  "_about": [
+    "Ground truth for the package images in test-data/images/.",
+    "",
+    "Values are written in the NORMALISED form the extractor is expected to",
+    "produce, not verbatim as printed: prices as '₹<amount>', quantities as",
+    "'<number> <standard unit>', packing dates as 'MM/YYYY'. Manufacturer and",
+    "consumer-care are scored as a substring match, because there are several",
+    "defensible ways to crop a name or a contact off a pack and none of them is",
+    "wrong.",
+    "",
+    "null means the declaration is genuinely NOT READABLE in this frame. That",
+    "covers two different situations and the distinction matters:",
+    "  - not printed on the pack at all (a real compliance finding)",
+    "  - printed, but on a panel this photograph does not show (a framing problem)",
+    "'absent_reason' records which, so accuracy is not measured against something",
+    "the recogniser could never have seen.",
+    "",
+    "Verify any entry marked 'uncertain' against the physical pack before trusting",
+    "it as a benchmark.",
+    "A declaration may list several lawful values - a phone and an email for consumer care, a packer and a marketer for the maker. Where the pack does, 'expected' is an array and any member counts as correct."
+  ],
+  "images": [
+    {
+      "file": "sample2.png",
+      "product": "Lay's Classic Salted potato chips",
+      "conditions": [
+        "flat",
+        "square-on",
+        "even light",
+        "printed label",
+        "clean"
+      ],
+      "expected": {
+        "mrp": "₹20.00",
+        "net_quantity": "52 g",
+        "manufacturer": "PepsiCo India Holdings",
+        "packing_date": "06/2024",
+        "consumer_care": [
+          "1800 22 4020",
+          "consumer.feedback@pepsico.com"
+        ]
+      }
+    },
+    {
+      "file": "chips.jpg",
+      "product": "Kurkure-style snack, partial rear panel",
+      "conditions": [
+        "crumpled",
+        "glare",
+        "partial panel",
+        "ink-jet seal",
+        "angled"
+      ],
+      "expected": {
+        "mrp": "₹20",
+        "net_quantity": "48 g",
+        "manufacturer": null,
+        "packing_date": "09/2023",
+        "consumer_care": null
+      },
+      "absent_reason": {
+        "manufacturer": "off-frame",
+        "consumer_care": "off-frame"
+      }
+    },
+    {
+      "file": "IMG_20260913_015510138_HDR.jpg",
+      "product": "Uttam Sugar sulphur-free sugar 1 kg",
+      "conditions": [
+        "exif-rotated",
+        "plastic sheen",
+        "creased film",
+        "dim light"
+      ],
+      "expected": {
+        "mrp": "₹65.00",
+        "net_quantity": "1 kg",
+        "manufacturer": "UTTAM SUGAR MILLS",
+        "packing_date": "07/2026",
+        "consumer_care": [
+          "0120-4525000",
+          "contactus@uttamsugar.in"
+        ]
+      }
+    },
+    {
+      "file": "mypack.jpg",
+      "product": "Nivea Express Hydration body lotion 400 ml",
+      "conditions": [
+        "exif-rotated",
+        "curved bottle",
+        "moulded plastic",
+        "low contrast"
+      ],
+      "expected": {
+        "mrp": "₹550",
+        "net_quantity": "400 ml",
+        "manufacturer": "NIVEA India",
+        "packing_date": "10/2024",
+        "consumer_care": [
+          "62487999",
+          "care@beiersdorf.com"
+        ]
+      }
+    },
+    {
+      "file": "IMG_20260912_182355595_HDR.jpg",
+      "product": "Minimalist face wash 100 ml",
+      "conditions": [
+        "exif-rotated",
+        "curved bottle",
+        "tiny type",
+        "blurred",
+        "dot-matrix stamp"
+      ],
+      "expected": {
+        "mrp": "₹299.00",
+        "net_quantity": "100 ml",
+        "manufacturer": [
+          "Uprising Science",
+          "Pharmaceuticals"
+        ],
+        "packing_date": "03/2026",
+        "consumer_care": [
+          "97723 46555",
+          "help@beminimalist.co"
+        ]
+      }
+    },
+    {
+      "file": "IMG_20260913_015331715_HDR.jpg",
+      "product": "Singla Enterprises spice bottle 300 ml",
+      "conditions": [
+        "transparent bottle",
+        "busy background",
+        "shallow depth of field"
+      ],
+      "expected": {
+        "mrp": "₹100.00",
+        "net_quantity": "300 ml",
+        "manufacturer": "SINGLA ENTERPRISES",
+        "packing_date": null,
+        "consumer_care": [
+          "9817669229",
+          "Rahulsinghal0586@gmail.com"
+        ]
+      },
+      "absent_reason": {
+        "packing_date": "not-printed"
+      },
+      "notes": [
+        "A genuine compliance finding: the 'Dt. of Packing' field is printed but",
+        "left blank, and net quantity is declared as 'Gross Wt.' rather than net.",
+        "The screening must report the date as missing, not invent one."
+      ]
+    },
+    {
+      "file": "IMG_20260913_015445452_HDR.jpg",
+      "product": "Fortune thick poha 500 g",
+      "conditions": [
+        "exif-rotated",
+        "glossy film",
+        "heavy glare",
+        "smudged ink-jet"
+      ],
+      "expected": {
+        "mrp": "₹75.00",
+        "net_quantity": "500 g",
+        "manufacturer": "AWL Agri Business",
+        "packing_date": "06/2026",
+        "consumer_care": [
+          "1800 572 9999",
+          "care@awl.in"
+        ]
+      },
+      "uncertain": [
+        "packing_date"
+      ],
+      "notes": [
+        "The packing date ink-jet is partly smudged; confirm against the pack."
+      ]
+    },
+    {
+      "file": "IMG_20260913_015454849_HDR.jpg",
+      "product": "Nitish Foods rusk 60 g",
+      "conditions": [
+        "exif-rotated",
+        "sideways text",
+        "crumpled film",
+        "thumb occlusion"
+      ],
+      "expected": {
+        "mrp": "₹11.00",
+        "net_quantity": "60 g",
+        "manufacturer": "FOODS",
+        "packing_date": "06/2026",
+        "consumer_care": "99900004"
+      },
+      "uncertain": [
+        "manufacturer",
+        "consumer_care"
+      ],
+      "notes": [
+        "The maker name and care number are partly hidden behind a thumb."
+      ]
+    },
+    {
+      "file": "IMG_20260913_015501688_HDR.jpg",
+      "product": "Jhadeswar Cashew Industry cashews 250 g",
+      "conditions": [
+        "exif-rotated",
+        "sideways text",
+        "foil glare",
+        "stamped values"
+      ],
+      "expected": {
+        "mrp": "₹379",
+        "net_quantity": "250 g",
+        "manufacturer": "JHADESWAR CASHEW",
+        "packing_date": "04/2026",
+        "consumer_care": null
+      },
+      "absent_reason": {
+        "consumer_care": "not-printed"
+      },
+      "uncertain": [
+        "mrp",
+        "packing_date"
+      ],
+      "notes": [
+        "Values are hand-stamped and the label rows do not line up with them.",
+        "Confirm the price and the packing date against the physical pack."
+      ]
+    },
+    {
+      "file": "IMG_20260913_015341155_HDR.jpg",
+      "product": "Hammer Type-C cable, angled on table",
+      "conditions": [
+        "exif-rotated",
+        "tilted",
+        "dark packaging",
+        "low contrast",
+        "table clutter"
+      ],
+      "expected": {
+        "mrp": "₹999.00",
+        "net_quantity": "1 unit",
+        "manufacturer": "Hammer Lifestyle",
+        "packing_date": "05/2026",
+        "consumer_care": [
+          "0180-4008081",
+          "9991108081",
+          "info@hammeronline.in"
+        ]
+      },
+      "notes": [
+        "Quantity is declared by number ('1 Unit') rather than by weight or",
+        "measure, which the Rules allow. The format check must accept it."
+      ]
+    },
+    {
+      "file": "IMG_20260913_015355629_HDR.jpg",
+      "product": "Hammer Type-C cable, upright",
+      "conditions": [
+        "exif-rotated",
+        "dark packaging",
+        "low contrast",
+        "tabular declarations"
+      ],
+      "expected": {
+        "mrp": "₹999.00",
+        "net_quantity": "1 unit",
+        "manufacturer": "Hammer Lifestyle",
+        "packing_date": "05/2026",
+        "consumer_care": [
+          "0180-4008081",
+          "9991108081",
+          "info@hammeronline.in"
+        ]
+      }
+    },
+    {
+      "file": "IMG_20260913_015359765_HDR.jpg",
+      "product": "Hammer Type-C cable, closer crop",
+      "conditions": [
+        "exif-rotated",
+        "dark packaging",
+        "low contrast",
+        "tabular declarations"
+      ],
+      "expected": {
+        "mrp": "₹999.00",
+        "net_quantity": "1 unit",
+        "manufacturer": "Hammer Lifestyle",
+        "packing_date": "05/2026",
+        "consumer_care": [
+          "0180-4008081",
+          "9991108081",
+          "info@hammeronline.in"
+        ]
+      }
+    },
+    {
+      "file": "IMG_20260914_012308403_HDR.jpg",
+      "product": "Johnson's Baby No More Tears shampoo 100 ml",
+      "conditions": [
+        "exif-rotated",
+        "translucent amber bottle",
+        "curved face",
+        "dot-matrix overprint",
+        "label split across two colour bands"
+      ],
+      "expected": {
+        "mrp": "₹105",
+        "net_quantity": "100 ml",
+        "manufacturer": "Johnson",
+        "packing_date": "12/2022",
+        "consumer_care": [
+          "1800 22 8111",
+          "care@jnjindia.com"
+        ]
+      }
+    },
+    {
+      "file": "IMG_20260914_012224178_HDR.jpg",
+      "product": "Vega hair combs, pack of 5",
+      "conditions": [
+        "exif-rotated",
+        "pack lying sideways",
+        "text at 90 degrees",
+        "glossy film",
+        "two prices printed",
+        "quantity by number"
+      ],
+      "expected": {
+        "mrp": "₹140.00",
+        "net_quantity": [
+          "5 unit",
+          "1 unit"
+        ],
+        "manufacturer": "VEGA INDUSTRIES",
+        "packing_date": "02/2026",
+        "consumer_care": [
+          "080 6949 6949",
+          "support@vega.co.in"
+        ]
+      },
+      "notes": [
+        "Prints both MRP 140.00 and OFFER PRICE 99.00. The MRP is the statutory declaration and must be the one read.",
+        "Net quantity is declared by number as '1 SET OF 5 COMBS', which Rule 6 permits."
+      ]
+    },
+    {
+      "file": "IMG_20260914_012150785_HDR.jpg",
+      "product": "P&G detergent powder 400 g",
+      "conditions": [
+        "exif-rotated",
+        "dot-matrix line printed upside down",
+        "creased film",
+        "glare",
+        "low contrast"
+      ],
+      "expected": {
+        "mrp": "₹60.00",
+        "net_quantity": "400 g",
+        "manufacturer": [
+          "Procter",
+          "Gamble"
+        ],
+        "packing_date": "09/2025",
+        "consumer_care": [
+          "1800-202-1364",
+          "intouch.im@pg.com"
+        ]
+      },
+      "notes": [
+        "The overprinted price and date line is rotated 180 degrees relative to the rest of the panel."
+      ]
+    },
+    {
+      "file": "IMG_20260914_012241536_HDR.jpg",
+      "product": "Metsun pharmaceutical carton",
+      "conditions": [
+        "exif-rotated",
+        "carton lying sideways",
+        "text at 90 degrees",
+        "bilingual Hindi and English",
+        "dim light"
+      ],
+      "expected": {
+        "mrp": "₹90",
+        "net_quantity": null,
+        "manufacturer": [
+          "METSUN LABORATORIES",
+          "MEDGEN"
+        ],
+        "packing_date": "07/2025",
+        "consumer_care": "metsunlab@gmail.com"
+      },
+      "absent_reason": {
+        "net_quantity": "off-frame"
+      },
+      "notes": [
+        "Declaration labels are printed in both Devanagari and English. Date is MM-YYYY."
+      ]
+    },
+    {
+      "file": "IMG_20260914_012129970_HDR.jpg",
+      "product": "Chocolate peanut butter jar",
+      "conditions": [
+        "curved glass jar",
+        "hand held",
+        "dark background",
+        "dot-matrix seal",
+        "strong glare band"
+      ],
+      "expected": {
+        "mrp": "₹250.00",
+        "net_quantity": null,
+        "manufacturer": null,
+        "packing_date": "07/2025",
+        "consumer_care": null
+      },
+      "absent_reason": {
+        "net_quantity": "off-frame",
+        "manufacturer": "off-frame",
+        "consumer_care": "off-frame"
+      },
+      "notes": [
+        "Prints MRP 250.00 beside a unit sale price of 0.71 per g. The rate must not be read as the price."
+      ]
+    },
+    {
+      "file": "IMG_20260913_015435880_HDR.jpg",
+      "product": "Bingo Tedhe Medhe Masala Tadka",
+      "conditions": [
+        "exif-rotated",
+        "pack lying sideways",
+        "text at 90 degrees",
+        "crumpled film",
+        "net weight given as a sum"
+      ],
+      "expected": {
+        "mrp": "₹10.00",
+        "net_quantity": "40.6 g",
+        "manufacturer": "ITC",
+        "packing_date": "07/2026",
+        "consumer_care": [
+          "1800 425 444 444",
+          "itcares@itc.in"
+        ]
+      },
+      "notes": [
+        "Net weight printed as '40.6g (27.07g + 13.53g FREE)'. Date printed as '14JUL26' with no separators."
+      ]
+    },
+    {
+      "file": "IMG_20260913_015418550_HDR.jpg",
+      "product": "Lay's potato chips, crumpled",
+      "conditions": [
+        "exif-rotated",
+        "severely crumpled",
+        "thumb occlusion",
+        "specular glare",
+        "torn print area"
+      ],
+      "expected": {
+        "mrp": "₹10",
+        "net_quantity": null,
+        "manufacturer": "PEPSICO INDIA HOLDINGS",
+        "packing_date": null,
+        "consumer_care": [
+          "1800 22 4020",
+          "consumer.feedback@pepsico.com"
+        ]
+      },
+      "absent_reason": {
+        "net_quantity": "obscured",
+        "packing_date": "obscured"
+      },
+      "notes": [
+        "The net quantity and date values are physically creased away. Correct behaviour is to report them unread."
+      ]
+    }
+  ]
+}

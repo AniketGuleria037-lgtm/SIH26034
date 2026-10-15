@@ -1,0 +1,86 @@
+{
+  "version": "2026.09",
+  "regulation": "Legal Metrology (Packaged Commodities) Rules, 2011",
+  "citation_note": "Clause references follow Rule 6(1) of the 2011 Rules. Verify each reference against the notified text and the latest amendment before using a generated report as evidence.",
+  "declarations": [
+    {
+      "id": "DECL-01",
+      "field": "mrp",
+      "label": "MRP",
+      "short_label": "MRP",
+      "citation": "Rule 6(1)(e)",
+      "requirement": "Retail sale price declared as maximum retail price, inclusive of all taxes.",
+      "required": true,
+      "format_regex": "^₹\\s?\\d+(\\.\\d{1,2})?$",
+      "format_hint": "Declared price should read as a currency mark followed by an amount.",
+      "min_confidence": 0.75,
+      "pass_note": "Maximum retail price is legible on the principal display panel.",
+      "missing_note": "No retail sale price was detected on the supplied image.",
+      "review_note": "Printed price is visible, but the currency mark is partially obscured."
+    },
+    {
+      "id": "DECL-02",
+      "field": "net_quantity",
+      "label": "Net quantity",
+      "short_label": "NET QTY",
+      "citation": "Rule 6(1)(c)",
+      "requirement": "Net quantity in standard units of weight, measure or number.",
+      "required": true,
+      "format_regex": "^\\d+(\\.\\d+)?\\s?(g|kg|ml|l)$",
+      "format_hint": "Net quantity must carry a numeric value and a standard unit.",
+      "min_confidence": 0.7,
+      "pass_note": "Unit and quantity are readable on the front panel.",
+      "missing_note": "No net quantity declaration was detected.",
+      "review_note": "A quantity was read but the unit is uncertain in this frame."
+    },
+    {
+      "id": "DECL-03",
+      "field": "manufacturer",
+      "label": "Manufacturer / packer",
+      "short_label": "MAKER",
+      "citation": "Rule 6(1)(a)",
+      "requirement": "Name and complete address of the manufacturer, packer or importer.",
+      "required": true,
+      "format_regex": null,
+      "format_hint": "Name and address block must be present.",
+      "min_confidence": 0.6,
+      "pass_note": "Name and address block detected on the rear panel.",
+      "missing_note": "No manufacturer, packer or importer name was detected.",
+      "review_note": "A name was read but the address block could not be confirmed."
+    },
+    {
+      "id": "DECL-04",
+      "field": "packing_date",
+      "label": "Packing date",
+      "short_label": "PACKING DATE",
+      "citation": "Rule 6(1)(d)",
+      "requirement": "Month and year in which the commodity was pre-packed, manufactured or imported.",
+      "required": true,
+      "format_regex": "^(0[1-9]|1[0-2])/\\d{4}$",
+      "format_hint": "Packing date must give month and year as MM/YYYY.",
+      "min_confidence": 0.65,
+      "pass_note": "Month and year of packing are legible.",
+      "missing_note": "No legible packing or manufacture date was detected. Capture the seal and batch area to confirm.",
+      "review_note": "A date was read but the month and year could not be separated reliably."
+    },
+    {
+      "id": "DECL-05",
+      "field": "consumer_care",
+      "label": "Consumer-care details",
+      "short_label": "CARE",
+      "citation": "Rule 6(1)(f)",
+      "requirement": "Name, address, telephone number and email of the person to be contacted for consumer complaints.",
+      "required": true,
+      "format_regex": null,
+      "format_hint": "A contact route for complaints must be present.",
+      "min_confidence": 0.6,
+      "pass_note": "Consumer-care contact detected near the lower seal.",
+      "missing_note": "No consumer-care contact route was detected.",
+      "review_note": "A contact was read but some digits are uncertain in this frame."
+    }
+  ],
+  "thresholds": {
+    "evidence_confidence_review": 0.6,
+    "illegible_frame_note": "The frame did not read well enough to screen declarations. Re-shoot the panel square-on with even lighting before recording a decision."
+  }
+}
